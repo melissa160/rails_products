@@ -1,0 +1,15 @@
+<h1>Create Product</h1>
+<%= form_for(@products) do |f| %>
+  <p>
+    <%= f.text_field :name, placeholder: "Name" %>  
+  </p>
+  <p>
+    <%= f.number_field :price, placeholder: "Price" %>
+  </p>
+  <article> 
+    <h4>Select Category</h4>
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  </article>
+  <p><%= f.submit %></p>
+<% end %>
+  
